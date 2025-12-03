@@ -1,6 +1,6 @@
 
 import { Doc, Project, Role, TableCollection, Task, User, Meeting, ActivityLog, StatusOption, PriorityOption, ContentPost, Client, EmployeeInfo, Contract, Folder, Deal, NotificationPreferences, Department, FinanceCategory, FinancePlan, PurchaseRequest, OrgPosition, BusinessProcess, AutomationRule, Warehouse, InventoryItem, StockMovement } from "../types";
-import { FIREBASE_DB_URL, MOCK_PROJECTS, MOCK_TABLES, MOCK_USERS, DEFAULT_STATUSES, DEFAULT_PRIORITIES, DEFAULT_NOTIFICATION_PREFS, MOCK_DEPARTMENTS, DEFAULT_FINANCE_CATEGORIES, MOCK_ORG_POSITIONS, DEFAULT_AUTOMATION_RULES, TELEGRAM_BOT_TOKEN } from "../constants";
+import { FIREBASE_DB_URL, MOCK_PROJECTS, MOCK_TABLES, DEFAULT_STATUSES, DEFAULT_PRIORITIES, DEFAULT_NOTIFICATION_PREFS, MOCK_DEPARTMENTS, DEFAULT_FINANCE_CATEGORIES, MOCK_ORG_POSITIONS, DEFAULT_AUTOMATION_RULES, TELEGRAM_BOT_TOKEN } from "../constants";
 
 const STORAGE_KEYS = {
   USERS: 'cfo_users',
@@ -442,7 +442,7 @@ export const storageService = {
       }
   },
 
-  getUsers: (): User[] => getLocal(STORAGE_KEYS.USERS, MOCK_USERS),
+  getUsers: (): User[] => getLocal(STORAGE_KEYS.USERS, []), // Пользователи загружаются только из Firebase
   getTasks: (): Task[] => getLocal(STORAGE_KEYS.TASKS, []),
   getProjects: (): Project[] => getLocal(STORAGE_KEYS.PROJECTS, MOCK_PROJECTS),
   getTables: (): TableCollection[] => getLocal(STORAGE_KEYS.TABLES, MOCK_TABLES),

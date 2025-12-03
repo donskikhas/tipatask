@@ -78,10 +78,8 @@ export const PRIORITY_COLORS = [
     { name: 'Yellow', class: 'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border border-yellow-300 dark:border-yellow-700' },
 ];
 
-export const MOCK_USERS: User[] = [
-  { id: 'u1', name: 'Александр Донских', login: 'admin', email: 'admin@cfo.uz', password: '123', role: Role.ADMIN, avatar: 'https://ui-avatars.com/api/?name=Alexandr+Donskikh&background=0D8ABC&color=fff', mustChangePassword: false },
-  { id: 'u2', name: 'Ruslan Nigmatulin', login: 'ruslan', email: 'ruslan@cfo.uz', password: '123', role: Role.EMPLOYEE, avatar: 'https://ui-avatars.com/api/?name=Ruslan&background=random', mustChangePassword: true },
-];
+// Пользователи теперь загружаются только из Firebase
+export const MOCK_USERS: User[] = [];
 
 export const MOCK_PROJECTS: Project[] = [
   { id: 'p1', name: 'Instagram', icon: 'Instagram', color: 'text-pink-500' },
